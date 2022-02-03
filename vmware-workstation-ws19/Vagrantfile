@@ -1,0 +1,13 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+Vagrant.configure(2) do |config|
+    config.vm.define "WS19" do |config|
+      config.vm.box = "StefanScherer/windows_2019"
+      config.vm.hostname = "WS19"
+      config.vm.provider "vmware_desktop" do |v|
+        v.gui = true
+        v.vmx["memsize"] = "8192"
+        v.vmx["numvcpus"] = "2"
+      end
+    end
+end
